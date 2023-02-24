@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <div class="sidebar">
@@ -52,13 +53,14 @@
           <div class="input-row">
             <div class="input-item">
               <label for="password">PASSWORD</label>
-              <input type="password" placeholder=" " name="password" id="password" minlength="6" required>
+              <input type="password" placeholder=" " name="password" id="password" minlength="6" oninput="validate(this)" required>
             </div>
             <div class="input-item">
               <label for="confirm-password">CONFIRM PASSWORD</label>
-              <input type="password" placeholder=" " name="confirm-password" id="confirm-password" minlength="6" required>
+              <input type="password" placeholder=" " name="confirm-password" id="confirm-password" minlength="6" oninput="validate(this)" required>
             </div>
           </div>
+          <div id="status" hidden>* Passwords do not match</div>
         </form>
       </div>
     </div>
