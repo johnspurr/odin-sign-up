@@ -3,10 +3,6 @@
   src: url("font/Norse-Bold.otf");
 }
 
-:root {
-  --accent-color: #7d3618;
-}
-
 *, html, body {
   margin: 0;
   padding: 0;
@@ -26,6 +22,8 @@ body {
 
 .main {
   height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
 }
 
 .top {
@@ -37,15 +35,10 @@ body {
   font-weight: 500;
 }
 
-.main {
-  display: grid;
-  grid-template-rows: 1fr auto 1fr;
-}
-
 .panel {
   background-color: white;
   padding: 16px 48px;
-  box-shadow: 0px 4px 4px #e4e4e4;
+  box-shadow: 0 4px 4px #e4e4e4;
 }
 
 .form-container {  
@@ -61,7 +54,6 @@ body {
   background-image: url("img/coleman-glover-unsplash.jpg");
   background-size: cover;
   background-position: center;
-  /* min-width: 256px; */
   flex: 1 0 auto;
   width: max(30%, 300px);
   display: grid;
@@ -77,14 +69,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0 0 0 / 40%);
   height: 150px;
   gap: 8px;
 }
 
 .logo span {
   color: white;  
-  font-family: "Norse Bold";
+  font-family: "Norse Bold", sans-serif;
   font-size: 100px;
   text-align: center;
 }
@@ -134,7 +126,7 @@ form input:invalid:not(:placeholder-shown) {
 }
 
 .bottom {
-  padding: 48px 48px;
+  padding: 48px;
   height: auto;
 }
 
@@ -179,12 +171,12 @@ button:active {
   text-decoration: underline;
 }
 
-.main .attribution {
-  display: none;
-}
-
 .attribution {
   text-align: center;
+}
+
+.main .attribution {
+  display: none;
 }
 
 .sidebar .attribution {
@@ -211,41 +203,50 @@ button:active {
   body {
     flex-direction: column;
   }
+
   .main {
     display: grid;
     grid-template-rows: max-content max-content max-content max-content auto max-content;
   }
+
   .sidebar {
     display: block;
     width: 100%;
     background-position: center;
     background-size: cover;
   }
+
   .logo {
     margin: 0;
   }
+
   .sidebar .attribution {
     display: none;
   }
+
   .main .attribution {
     display: initial;
     grid-row: 6;
     padding-bottom: 4px;
   }
+
   .panel {
     display: flex;
     justify-content: center;
   }
+
   .form-container {
     max-width: 584px;
     min-width: none;
     flex: auto;
   }
+
   button {
     max-width: 350px;
     width: 100%;
     margin-bottom: 16px;
   }
+
   .bottom {
     display: block;
     text-align: center;
@@ -259,9 +260,11 @@ button:active {
   .input-item {
     flex: 1 0 100%;
   }
+
   .input-row {
     flex-wrap: wrap;
   }
+
   form input {
     width: 100%;
   }
